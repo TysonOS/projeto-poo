@@ -9,7 +9,7 @@ create table assunto(
     dataCriacao DATE
 );
 
-create table tarefas(
+create table tarefa(
     id INT auto_increment PRIMARY KEY,
     assuntoId INT,    
     foreign key (assuntoId) references assunto(id) ON DELETE CASCADE,
@@ -17,5 +17,5 @@ create table tarefas(
     descricao VARCHAR(255),
     concluida BOOLEAN default false,
     dataCriacao TIMESTAMP default current_timestamp,
-    prazoConclusao DATE default null
+    prazoConclusao DATETIME default null
 );
